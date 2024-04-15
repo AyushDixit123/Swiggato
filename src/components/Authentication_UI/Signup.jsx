@@ -7,7 +7,7 @@ import { Footer } from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
-export default function CreateTodo(){
+export default function Signup(){
     const [email,setEmail]= useState('');
     const [password,setPass]= useState('');
 	const setAuthenticated=useSetRecoilState(authenticate)
@@ -82,7 +82,7 @@ export default function CreateTodo(){
 		}
         })}}>SignUP</button>
 		<br />
-		<div className="redirect">Account already exists?<a href='./signin'> Sign in</a></div>
+        <div className="redirect">Account already exists? <Link to="/signin">Sign in</Link></div>
 
     </div></div>
     <Footer />
