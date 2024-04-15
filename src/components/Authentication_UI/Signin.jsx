@@ -15,13 +15,15 @@ export default function Signin(){
     return <div>
         <div>
             
-        <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '10px', marginLeft: '5%' }}   />
+        <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '40px', marginLeft: '8%' }}   />
             </Link>
         </div>
         
 		<div className="signup_container">
             
 			<div className="sign-right">
+                <h1 style={{color:'gray'}}>WELCOME BACK !</h1>
+                <br />
         <input type="text" placeholder="email" className="sign-right"
         style={{
             padding:10,

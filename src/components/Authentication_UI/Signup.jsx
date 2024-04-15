@@ -14,7 +14,7 @@ export default function Signup(){
 	const navigate= useNavigate();
     return <div>
         <div>
-        <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '10px', marginLeft: '5%' }}   />
+        <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '40px', marginLeft: '8%' }}   />
             </Link>
         </div>
        
@@ -22,10 +22,11 @@ export default function Signup(){
         
 			<div className="sign-right">
                 <h1 style={{color:'gray'}}>Please,Sign-up to continue</h1>
+                <br />
         <input type="text" placeholder="email" className="sign-right"
         style={{
             padding:10,
-            margin:10
+            margin:9
         }} onChange={function(event){
             const value=event.target.value;
             setEmail(event.target.value);
@@ -35,7 +36,7 @@ export default function Signup(){
         <input type="text" placeholder="password" className="sign-right"
          style={{
             padding:10,
-            margin:10
+            margin:9
         }} onChange={function(event){
             const value=event.target.value;
             setPass(event.target.value);
@@ -82,7 +83,7 @@ export default function Signup(){
 			const errData=await res.json();
 			alert(errData.msg)
 		}
-        })}}>SignUP</button>
+        })}}>Sign Up</button>
 		<br />
         <div className="redirect">Account already exists? <Link to="/signin">Sign in</Link></div>
 
