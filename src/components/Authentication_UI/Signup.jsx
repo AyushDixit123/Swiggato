@@ -50,7 +50,7 @@ export default function Signup(){
             
             Additionally, the fetch options object specifies the headers property, where "contentType":"application/json " is set.*/
            { 
-            //mode: 'no-cors',
+            
             method:"POST",
         body:JSON.stringify({
 			email: email,
