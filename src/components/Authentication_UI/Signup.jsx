@@ -49,7 +49,9 @@ export default function Signup(){
             The request body is created using JSON.stringify() with an object containing title and description properties. These properties are taken from the component's state, title and desc.
             
             Additionally, the fetch options object specifies the headers property, where "contentType":"application/json " is set.*/
-           { method:"POST",
+           { 
+            mode: 'no-cors',
+            method:"POST",
         body:JSON.stringify({
 			email: email,
 			password: password
