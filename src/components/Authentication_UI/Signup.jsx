@@ -82,7 +82,7 @@ export default function CreateTodo(){
 		}
         })}}>SignUP</button>
 		<br />
-		<div className="redirect">Account already exists?<a href='./SignIn'> Sign in</a></div>
+		<div className="redirect">Account already exists?<a href='./signin'> Sign in</a></div>
 
     </div></div>
     <Footer />
