@@ -52,12 +52,12 @@ export default function Signup(){
            { 
             
             method:"POST",
-        body:JSON.stringify({
-			email: email,
-			password: password
+            body:JSON.stringify({
+                email: email,
+                password: password
         }),
     headers:{
-        "Content-Type":"application/json "
+        "Content-Type":"application/json"
     }}).then(async function(res){ 
 		if(res.ok) {
 			//taking data from the backend
