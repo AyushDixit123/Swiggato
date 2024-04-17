@@ -59,13 +59,22 @@
 @media (max-width:750px){
     
     .header-contents{
-        max-width: 65%
+        max-width: 65%;
+        font-size: 75%;
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
     }
 
-    .header-contents{
-        display: none
-    }
+    
     .header-contents button{
         padding: 2vw 4vw
     }
 }
+
+
+@media (max-width:370px){
+    
+    .header-contents{
+        display: none;
+    }}

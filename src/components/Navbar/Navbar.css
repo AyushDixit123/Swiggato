@@ -129,3 +129,36 @@
          font-size: 15px;
      }
  }
+ @media (min-width:500px) and (max-width:900px) {
+    .navbar-search-icon {
+        margin-top: 10px; /* Adjust the margin-top as needed */
+    }
+    
+ }
+
+ @media (max-width:480px){
+    .logo{
+     width: 100px
+ 
+     }
+    
+     .navbar-search-icon {
+        margin-top: 10px; /* Adjust the margin-top as needed */
+    }
+    }
+
+    @media (max-width:275px){
+        .logo{
+         width: 80px
+     
+         }
+         
+         .navbar-search-icon {
+            margin-top: 6px; /* Adjust the margin-top as needed */
+        }
+        .Navbar button{
+            font-size: 4px; /* Adjust the font size as needed */
+            padding: 2px 1px;
+        }
+        }
+   

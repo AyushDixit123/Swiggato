@@ -21,7 +21,21 @@ export function Navbar() {
     const [auth, setAuthenticated] = useRecoilState(authenticate);
     const [menuvisible, setMenuvisible] = useState(location.pathname !== '/cart');
     const count = useRecoilValue(totalcount);
-    const[onCart,setOncart]=useState(location.pathname !== '/cart')
+    const[onCart,setOncart]=useState(location.pathname !== '/cart');
+    const [showSearchIcon, setShowSearchIcon] = useState(window.innerWidth > 400);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setShowSearchIcon(window.innerWidth > 400);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup function to remove the event listener
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     useEffect(() => {
         setMenuvisible(location.pathname !== '/cart')
@@ -31,8 +45,9 @@ export function Navbar() {
     return (
         <div className="Navbar">
             
-            <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '10px', marginLeft: '10%' }}   />
-            </Link><ul className="navbar-menu">
+            <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '10px', marginLeft: '10%' }} className="logo"   />
+            </Link>
+            <ul className="navbar-menu">
 
                 {menuvisible ? <li>
                     <HashLink to='#' >HOME</HashLink>
@@ -48,7 +63,11 @@ export function Navbar() {
 
 
             <div className="navbar-right">
+            {showSearchIcon && (
                 <img src={assets.search_icon} alt="" />
+            )}
+            
+    
                 <div className="navbar-search-icon">
                     <Link to={auth?'/cart':'/signup'}>
                         <Badge badgeContent={count}  className='dot' color='primary' >
@@ -61,7 +80,7 @@ export function Navbar() {
                 </div>
                 <ul>
                    <li>
-                        {!auth ? <Link to="/signup"><button>Sign up</button></Link> : <div><button onClick={() => { setAuthenticated(false); localStorage.removeItem('token'); navigate('/')}}>Logout</button></div>}
+                        {!auth ? <Link to="/signup" className="nav-btn"><button>Sign up</button></Link> : <div><button onClick={() => { setAuthenticated(false); localStorage.removeItem('token'); navigate('/')}}>Logout</button></div>}
                     </li>
                 </ul>
 
