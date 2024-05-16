@@ -16,12 +16,12 @@ import { useNavigate } from "react-router-dom";
 
 
 export function Navbar() {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const location = useLocation();//location.pathname is a property provided by the useLocation hook from react-router-dom. It represents the path of the current URL.
     const [auth, setAuthenticated] = useRecoilState(authenticate);
     const [menuvisible, setMenuvisible] = useState(location.pathname !== '/cart');
     const count = useRecoilValue(totalcount);
-    const[onCart,setOncart]=useState(location.pathname !== '/cart');
+    const [onCart, setOncart] = useState(location.pathname !== '/cart');
     const [showSearchIcon, setShowSearchIcon] = useState(window.innerWidth > 400);
 
     useEffect(() => {
@@ -44,8 +44,8 @@ export function Navbar() {
 
     return (
         <div className="Navbar">
-            
-            <Link to='/'><img src={assets.logo} alt=""  width={160} style={{ marginTop: '10px', marginLeft: '10%' }} className="logo"   />
+
+            <Link to='/'><img src={assets.logo} alt="" width={160} style={{ marginTop: '10px', marginLeft: '10%' }} className="logo" />
             </Link>
             <ul className="navbar-menu">
 
@@ -63,14 +63,14 @@ export function Navbar() {
 
 
             <div className="navbar-right">
-            {showSearchIcon && (
-                <img src={assets.search_icon} alt="" />
-            )}
-            
-    
+                {showSearchIcon && (
+                    <img src={assets.search_icon} alt="" />
+                )}
+
+
                 <div className="navbar-search-icon">
-                    <Link to={auth?'/cart':'/signup'}>
-                        <Badge badgeContent={count}  className='dot' color='primary' >
+                    <Link to={auth ? '/cart' : '/signup'}>
+                        <Badge badgeContent={count} className='dot' color='primary' >
                             <img src={assets.basket_icon} alt="" />
                         </ Badge >
                     </Link>
@@ -79,8 +79,8 @@ export function Navbar() {
                     </div> */}
                 </div>
                 <ul>
-                   <li>
-                        {!auth ? <Link to="/signup" className="nav-btn"><button>Sign up</button></Link> : <div><button onClick={() => { setAuthenticated(false); localStorage.removeItem('token'); navigate('/')}}>Logout</button></div>}
+                    <li>
+                        {!auth ? <Link to="/signup" className="nav-btn"><button>Sign up</button></Link> : <div><button onClick={() => { setAuthenticated(false); localStorage.removeItem('token'); navigate('/') }}>Logout</button></div>}
                     </li>
                 </ul>
 

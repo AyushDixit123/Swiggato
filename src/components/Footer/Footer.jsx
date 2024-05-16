@@ -35,6 +35,7 @@ export function Footer(){
                 <ul>
                     <a href="#contact-us">Contact Us</a>
                     <div id='contact-us'>
+                        <br />
                     <li>393390220</li>
                     <li>contact@swigatto.com</li></div>
                 </ul>

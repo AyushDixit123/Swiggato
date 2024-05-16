@@ -90,35 +90,3 @@ export const removeItem=selector({
 
 
 
-
-
-
-
-//console.log(JSON.parse(Cookies.get('cart')))
-/*const getCartDataFromLocalStorage = () => {
-    const cartData = localStorage.getItem('cart');
-    console.log('hi')
-    return cartData ? JSON.parse(cartData) : {};
-};
-export const cartStateAtom = atom({
-    key: 'cartStateAtom',
-    default: getCartDataFromLocalStorage,
-});
-  
-export const addToCart = (cart, itemId) => {
-    console.log('add')
-    const updatedCart = { ...cart };
-    updatedCart[itemId] = (updatedCart[itemId] || 0) + 1;
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    return updatedCart;
-};
-  
-export const removeFromCart = (cart, itemId) => {
-    const updatedCart = { ...cart };
-    if (updatedCart[itemId] > 0) {
-        updatedCart[itemId]--; // Decrease the quantity by 1
-    }
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    return updatedCart;
-};*/
-  

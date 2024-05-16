@@ -1,5 +1,5 @@
 import React from "react";
-import'./Cart.css';
+import './Cart.css';
 import { foodListState } from "../../Context/atom";
 import { useRecoilValue } from "recoil";
 import { Itemcount } from "../../Context/atom";
@@ -7,7 +7,7 @@ export default function Cart() {
     const foodlist = useRecoilValue(foodListState);
 
     const itemCount = useRecoilValue(Itemcount);
-    let grandtotal=0;
+    let grandtotal = 0;
     return <div className="cart">
         <div className="cart-items">
             <div className="items-title">
@@ -16,32 +16,32 @@ export default function Cart() {
                 <p>Price</p>
                 <p>Quantity</p>
                 <p>Total</p>
-                </div>
-            
-            
+            </div>
+
+
             {
                 foodlist.map((item, index) => {
                     if (itemCount[item._id] > 0) {
-                        const total=item.price*itemCount[item._id];
-                        grandtotal +=total;
-                        
+                        const total = item.price * itemCount[item._id];
+                        grandtotal += total;
+
 
                         return (
                             <div className="items-title items-item">
                                 <img src={item.image} alt="" />
                                 <p>{item.name}</p>
                                 <p>${item.price}</p>
-    
+
                                 <p>{itemCount[item._id]}</p>
                                 <p>${total} </p>
-                                
+
 
                             </div>
                         )
                     }
                 })
             }
-            
+
         </div>
         <div className="bottom">
             <div className="total">
@@ -55,9 +55,9 @@ export default function Cart() {
                     <p>${2}</p>
 
                 </div>
-                
+
                 <hr />
-                <p>${grandtotal+2}</p>
+                <p>${grandtotal + 2}</p>
                 <button>Proceed to Pay</button>
             </div>
         </div>

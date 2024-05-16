@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "/cart", element: <Cart /> },
       { path: "/order", element: <PlaceOrder /> },
-      
+
     ]
   },
   {
@@ -38,10 +38,10 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
- 
-   <RecoilRoot >
-    
-    <RouterProvider router ={router}/> 
-    </RecoilRoot>  
+
+
+  <RecoilRoot >
+
+    <RouterProvider router={router} />
+  </RecoilRoot>
 );
